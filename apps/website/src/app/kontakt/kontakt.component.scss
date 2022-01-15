@@ -1,0 +1,22 @@
+table {
+  th {
+    padding: 10px 5px 0px 0px;
+    vertical-align: top;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  td {
+    padding-right: 5px;
+  }
+}
+
+form.ng-submitted {
+  .ng-invalid:not(form) {
+    border: solid red 1px;
+  }
+  .invalid {
+    color:red;
+    font-weight: bold;
+  }
+}

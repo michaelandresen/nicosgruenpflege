@@ -1,0 +1,48 @@
+.pgBg {
+	width:930px;
+	margin:auto;
+	background-color:yellow;
+	padding:15px 0px;
+}
+
+.pgLyt {
+	width:900px;
+	margin:auto;
+}
+
+.logo {
+	text-align:center;
+	border: solid black 1px;
+	padding:5px;
+	margin-bottom:15px;
+}
+
+.contentBdr {
+	border: solid black 1px;
+	margin:15px 0px;
+	padding: 15px;
+	position:relative;
+	min-height:400px;
+}
+
+.address {
+	float:right;
+	padding:5px;
+	margin-left:15px;
+	margin-bottom:15px;
+	font-size:0.8em;
+	text-align:right;
+}
+
+.picTel {
+	background-image:url('img/telEmail.png');
+	background-position:right;
+	width:17px;
+	height:15px;
+}
+
+.picEmail {
+	background-image:url('img/telEmail.png');
+	width:19px;
+	height:15px;
+}

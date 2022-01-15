@@ -1,0 +1,35 @@
+<div class="pgBg">
+  <div class="pgLyt">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Nico Garten und Landschaftsbau" />
+    </div>
+    <nicosgruenpflege-menu-bar>
+      <nicosgruenpflege-menu-item
+        *ngFor="let item of topMenuItems"
+        [link]="item.link"
+        >{{ item.text }}</nicosgruenpflege-menu-item
+      >
+    </nicosgruenpflege-menu-bar>
+    <div class="contentBdr">
+      <div class="address">
+        Nico Andresen<br />
+        Jürgenskoppel 29b<br />
+        24253 Probsteierhagen<br />
+        <img src="assets/blank.gif" alt="Telefon" class="picTel" /> :
+        <a href="tel:+4901726635935">0172 - 66 35 93 5</a><br />
+        <img src="assets/blank.gif" alt="Email" class="picEmail" /> :
+        <a href="mailto:nicoandresen@gmx.de">nicoandresen@gmx.de</a><br />
+      </div>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <nicosgruenpflege-menu-bar>
+      <nicosgruenpflege-menu-item
+        *ngFor="let item of bottomMenuItems"
+        [link]="item.link"
+        >{{ item.text }}</nicosgruenpflege-menu-item
+      >
+    </nicosgruenpflege-menu-bar>
+</div>
+</div>
