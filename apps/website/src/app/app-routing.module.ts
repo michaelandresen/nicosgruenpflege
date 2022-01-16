@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import {
   GARTENPFLEGE,
   IMPRESSUM,
@@ -10,7 +10,8 @@ import {
 
 @NgModule({
   imports: [
-    RouterModule.forRoot([
+    RouterModule.forRoot(
+      [
       {
         path: STARTSEITE,
         pathMatch: 'full',
@@ -41,7 +42,10 @@ import {
         loadChildren: () =>
           import('./impressum/impressum.module').then((m) => m.ImpressumModule),
       },
-    ]),
+    ],
+    {
+      initialNavigation: 'enabledBlocking'
+    }),
   ],
   exports: [RouterModule],
 })
