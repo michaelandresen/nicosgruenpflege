@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import {
   GARTENPFLEGE,
   IMPRESSUM,
@@ -12,40 +12,51 @@ import {
   imports: [
     RouterModule.forRoot(
       [
+        {
+          path: STARTSEITE,
+          pathMatch: 'full',
+          loadChildren: () =>
+            import('./welcome/welcome.module').then((m) => m.WelcomeModule),
+        },
+        {
+          path: LANDSCHAFTSPFLEGE,
+          loadChildren: () =>
+            import('./landschaftspflege/landschaftspflege.module').then(
+              (m) => m.LandschaftspflegeModule
+            ),
+        },
+        {
+          path: GARTENPFLEGE,
+          loadChildren: () =>
+            import('./gartenpflege/gartenpflege.module').then(
+              (m) => m.GartenpflegeModule
+            ),
+        },
+        {
+          path: KONTAKT,
+          loadChildren: () =>
+            import('./kontakt/kontakt.module').then((m) => m.KontaktModule),
+        },
+        {
+          path: IMPRESSUM,
+          loadChildren: () =>
+            import('./impressum/impressum.module').then(
+              (m) => m.ImpressumModule
+            ),
+        },
+        {
+          path: '**',
+          loadChildren: () =>
+            import('./not-found/not-found.module').then(
+              (m) => m.NotFoundModule
+            ),
+        },
+      ],
       {
-        path: STARTSEITE,
-        pathMatch: 'full',
-        loadChildren: () =>
-          import('./welcome/welcome.module').then((m) => m.WelcomeModule),
-      },
-      {
-        path: LANDSCHAFTSPFLEGE,
-        loadChildren: () =>
-          import('./landschaftspflege/landschaftspflege.module').then(
-            (m) => m.LandschaftspflegeModule
-          ),
-      },
-      {
-        path: GARTENPFLEGE,
-        loadChildren: () =>
-          import('./gartenpflege/gartenpflege.module').then(
-            (m) => m.GartenpflegeModule
-          ),
-      },
-      {
-        path: KONTAKT,
-        loadChildren: () =>
-          import('./kontakt/kontakt.module').then((m) => m.KontaktModule),
-      },
-      {
-        path: IMPRESSUM,
-        loadChildren: () =>
-          import('./impressum/impressum.module').then((m) => m.ImpressumModule),
-      },
-    ],
-    {
-      initialNavigation: 'enabledBlocking'
-    }),
+        initialNavigation: 'enabledBlocking',
+        preloadingStrategy: PreloadAllModules,
+      }
+    ),
   ],
   exports: [RouterModule],
 })

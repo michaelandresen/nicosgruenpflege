@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { LandschaftspflegeComponent } from './landschaftspflege.component';
 
-const routes: Routes = [{ path: '', component: LandschaftspflegeComponent }];
-
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild([
+      { path: '', component: LandschaftspflegeComponent },
+    ]),
+  ],
+  exports: [RouterModule],
 })
-export class LandschaftspflegeRoutingModule { }
+export class LandschaftspflegeRoutingModule {}
