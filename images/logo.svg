@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.67882997"
+     inkscape:cx="-35.354951"
+     inkscape:cy="455.19499"
+     inkscape:window-width="1920"
+     inkscape:window-height="942"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4166"
+       x="-0.0074185225"
+       y="-0.052197444"
+       width="1.014837"
+       height="1.1043949">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.49070655"
+         id="feGaussianBlur4168" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.1051px;line-height:1.25;font-family:sans-serif;opacity:1;fill:#000000;fill-opacity:1;stroke:#010800;stroke-width:1.32291667;filter:url(#filter4166);stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;letter-spacing:0.52916667px"
+       x="105.72514"
+       y="34.096298"
+       id="text1089-0"><tspan
+         sodipodi:role="line"
+         id="tspan1087-5"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Georgia;-inkscape-font-specification:'Georgia Bold Italic';text-align:center;text-anchor:middle;stroke-width:1.32291667;stroke:#010800;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill:#000000"
+         x="105.72514"
+         y="34.096298">Nico Andresen</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Georgia;-inkscape-font-specification:'Georgia Bold Italic';text-align:center;text-anchor:middle;stroke-width:1.32291667;stroke:#010800;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill:#000000"
+         x="105.72514"
+         y="46.82983"
+         id="tspan1091-2">Garten und Landschaftspflege</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.1051px;line-height:1.25;font-family:sans-serif;letter-spacing:0.529167px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.252627"
+       x="105.72514"
+       y="34.096367"
+       id="text1089"><tspan
+         sodipodi:role="line"
+         id="tspan1087"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Georgia;-inkscape-font-specification:'Georgia Bold Italic';text-align:center;text-anchor:middle;fill:#008000;stroke-width:0.252627"
+         x="105.72514"
+         y="34.096367">Nico Andresen</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Georgia;-inkscape-font-specification:'Georgia Bold Italic';text-align:center;text-anchor:middle;fill:#008000;stroke-width:0.252627"
+         x="105.98972"
+         y="46.829903"
+         id="tspan1091">Garten und Landschaftspflege</tspan></text>
+  </g>
+</svg>

@@ -1,5 +1,11 @@
 <nav>
-<ul class="menu-bar">
-  <ng-content></ng-content>
-</ul>
+  <ul>
+    <li
+      *ngFor="let item of items"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="item.link">{{ item.text }}</a>
+    </li>
+  </ul>
 </nav>

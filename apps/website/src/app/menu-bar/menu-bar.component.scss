@@ -1,4 +1,4 @@
-.menu-bar {
+ul {
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 10px;
@@ -6,4 +6,23 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+li {
+  text-align: center;
+
+  a {
+    display: block;
+    border: solid black 1px;
+    padding: 5px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #ffd300;
+  }
+
+  &.active {
+    background-color: #ffb000;
+  }
 }

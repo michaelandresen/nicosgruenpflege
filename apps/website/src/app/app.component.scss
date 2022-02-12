@@ -1,13 +1,8 @@
 .pgBg {
-	width:930px;
-	margin:auto;
-	background-color:yellow;
-	padding:15px 0px;
-}
-
-.pgLyt {
 	width:900px;
 	margin:auto;
+	background-color:yellow;
+	padding:15px 15px;
 }
 
 .logo {
@@ -15,6 +10,9 @@
 	border: solid black 1px;
 	padding:5px;
 	margin-bottom:15px;
+  img {
+    width: 590px;
+  }
 }
 
 .contentBdr {

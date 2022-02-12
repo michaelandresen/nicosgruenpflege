@@ -1,34 +1,22 @@
 <div class="pgBg">
-  <div class="pgLyt">
-    <div class="logo">
-      <img src="assets/logo.png" alt="Nico Garten und Landschaftsbau" />
+  <div class="logo">
+    <img src="assets/logo.svg" alt="Nico Garten und Landschaftsbau" />
+  </div>
+  <nicosgruenpflege-menu-bar [items]="topMenuItems"></nicosgruenpflege-menu-bar>
+  <div class="contentBdr">
+    <div class="address">
+      Nico Andresen<br />
+      Jürgenskoppel 29b<br />
+      24253 Probsteierhagen<br />
+      <img src="assets/blank.gif" alt="Telefon" class="picTel" /> :
+      <img src="assets/blank.gif" alt="Email" class="picEmail" /> :
+      <a href="mailto:nicoandresen@gmx.de">nicoandresen@gmx.de</a><br />
     </div>
-    <nicosgruenpflege-menu-bar>
-      <nicosgruenpflege-menu-item
-        *ngFor="let item of topMenuItems"
-        [link]="item.link"
-        >{{ item.text }}</nicosgruenpflege-menu-item
-      >
-    </nicosgruenpflege-menu-bar>
-    <div class="contentBdr">
-      <div class="address">
-        Nico Andresen<br />
-        Jürgenskoppel 29b<br />
-        24253 Probsteierhagen<br />
-        <img src="assets/blank.gif" alt="Telefon" class="picTel" /> :
-        <img src="assets/blank.gif" alt="Email" class="picEmail" /> :
-        <a href="mailto:nicoandresen@gmx.de">nicoandresen@gmx.de</a><br />
-      </div>
-      <div class="content">
-        <router-outlet></router-outlet>
-      </div>
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
-    <nicosgruenpflege-menu-bar>
-      <nicosgruenpflege-menu-item
-        *ngFor="let item of bottomMenuItems"
-        [link]="item.link"
-        >{{ item.text }}</nicosgruenpflege-menu-item
-      >
-    </nicosgruenpflege-menu-bar>
-</div>
+  </div>
+  <nicosgruenpflege-menu-bar
+    [items]="bottomMenuItems"
+  ></nicosgruenpflege-menu-bar>
 </div>
