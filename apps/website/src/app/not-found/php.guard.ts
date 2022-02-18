@@ -7,8 +7,6 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { delay, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class PhpGuard implements CanActivate {

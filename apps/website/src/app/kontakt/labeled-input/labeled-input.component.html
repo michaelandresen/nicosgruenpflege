@@ -1,0 +1,9 @@
+<label *ngIf="viewModel$ | async as viewModel">
+  <ng-content></ng-content>
+  <span *ngIf="viewModel.required" class="mandatory">*</span>
+  <br />
+  <ng-container [ngSwitch]="viewModel.type">
+    <input *ngSwitchCase="'input'" type="text" [name]="name" [formControl]="control" [size]="size" />
+    <textarea *ngSwitchCase="'textarea'" [name]="name" [formControl]="control" [cols]="size || null" [rows]="rows"></textarea>
+  </ng-container>
+</label>

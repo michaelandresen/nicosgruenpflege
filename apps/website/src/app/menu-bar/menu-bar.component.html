@@ -1,11 +1,35 @@
-<nav>
-  <ul>
-    <li
-      *ngFor="let item of items"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
+<nav *ngIf="viewModel$ | async as viewModel">
+  <ng-container *ngIf="viewModel.isMobileView; else desktopView">
+    <div class="menu" [class.open]="viewModel.isMenuOpened">
+      <ul>
+        <li
+          *ngFor="let item of viewModel.items"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a [routerLink]="item.link" (click)="itemClicked($event)">{{ item.text }}</a>
+        </li>
+      </ul>
+    </div>
+    <button
+      *ngIf="viewModel.items.length > 1"
+      class="menu-button"
+      (click)="toggleMenu()"
     >
-      <a [routerLink]="item.link">{{ item.text }}</a>
-    </li>
-  </ul>
+      <fa-icon [icon]="menuIcon"></fa-icon>
+    </button>
+  </ng-container>
+  <ng-template #desktopView>
+    <div class="menu">
+      <ul>
+        <li
+          *ngFor="let item of viewModel.items"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a [routerLink]="item.link">{{ item.text }}</a>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
 </nav>

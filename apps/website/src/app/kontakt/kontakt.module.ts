@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { KontaktRoutingModule } from './kontakt-routing.module';
 import { KontaktComponent } from './kontakt.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LabeledInputComponent } from './labeled-input/labeled-input.component';
 
 
 @NgModule({
   declarations: [
-    KontaktComponent
+    KontaktComponent,
+    LabeledInputComponent
   ],
   imports: [
     CommonModule,

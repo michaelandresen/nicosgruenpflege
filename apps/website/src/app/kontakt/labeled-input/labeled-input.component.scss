@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+:host-context(form.ng-submitted .ng-invalid) {
+  label {
+    color: red;
+    font-weight: bold;
+  }
+  input, textarea {
+    border: solid red 1px;
+  }
+}
+input,
+textarea {
+  width: 100%;
+}

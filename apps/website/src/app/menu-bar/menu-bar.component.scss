@@ -1,3 +1,20 @@
+nav {
+  display: flex;
+  flex-flow: row;
+}
+
+.menu {
+  flex: 1;
+}
+
+.menu-button {
+  flex-grow: 0;
+  margin-left: 10px;
+  background: none;
+  border: solid black 1px;
+  outline: none;
+}
+
 ul {
   display: grid;
   grid-auto-flow: column;
@@ -11,7 +28,8 @@ ul {
 li {
   text-align: center;
 
-  a {
+  a,
+  fa-icon {
     display: block;
     border: solid black 1px;
     padding: 5px;
@@ -24,5 +42,55 @@ li {
 
   &.active {
     background-color: #ffb000;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    height: 33px;
+  }
+  .menu {
+    position: relative;
+    &:not(.open) {
+      li {
+        display: none;
+      }
+      li.active {
+        display: list-item;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+      li:first-child {
+        display: list-item;
+      }
+    }
+  }
+  .menu-button {
+    height: 33px;
+    color: black;
+  }
+  ul {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    background-color: yellow;
+  }
+  .open ul {
+    border-bottom: black solid 1px;
+    li {
+      display: inherit;
+      a {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .menu-button {
+    display: none;
   }
 }

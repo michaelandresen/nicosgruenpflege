@@ -1,0 +1,46 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col1 {
+  flex: 0 1 auto;
+}
+
+.col2 {
+  flex: 1;
+  text-align: right;
+  font-size: 0.7em;
+}
+
+.bullet-area {
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+
+  ul,
+  img {
+    flex: 0 1 auto;
+  }
+}
+
+.garden {
+  line-height: 0;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 0;
+  background-color: white;
+  border: solid black 1px;
+  padding: 4px;
+  text-align: center;
+  img {
+    height: 386px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .garden img {
+    height: 200px;
+  }
+}

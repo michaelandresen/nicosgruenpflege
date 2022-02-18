@@ -1,41 +1,70 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, ContentChildren, ElementRef, Inject, Input, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AbstractControl, DefaultValueAccessor, FormControl, FormControlDirective, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { LabeledInputComponent } from './labeled-input/labeled-input.component';
 
 @Component({
   selector: 'nicosgruenpflege-kontakt',
   templateUrl: './kontakt.component.html',
   styleUrls: ['./kontakt.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class KontaktComponent {
+export class KontaktComponent implements AfterViewInit {
   public readonly form = new FormGroup({
-    anrede: new FormControl('', Validators.required),
-    vorname: new FormControl(undefined, Validators.required),
-    nachname: new FormControl(undefined, Validators.required),
-    plz: new FormControl(undefined),
-    ort: new FormControl(undefined),
-    strasse: new FormControl(undefined),
-    telefon: new FormControl(undefined),
-    email: new FormControl(undefined),
+    name: new FormControl(undefined, Validators.required),
+    strasse: new FormControl(),
+    email: new FormControl(),
+    plz: new FormControl(),
+    ort: new FormControl(),
+    telefon: new FormControl(),
     nachricht: new FormControl(undefined, Validators.required),
   });
 
   private readonly document: Document;
 
-  public constructor(@Inject(DOCUMENT) document: unknown) {
+  @ViewChild('frm')
+  private formElement!: ElementRef<HTMLFormElement>;
+
+  public constructor(
+    @Inject(DOCUMENT) document: unknown,
+    ) {
     this.document = document as Document;
+  }
+
+  public ngAfterViewInit(): void {
+    console.log('formElement:', this.formElement);
   }
 
   public submit(): void {
     if (this.form.invalid) {
-      return;
+      this.scrollToFirstInvalidElement();
+    } else {
+      this.sendEmail();
     }
-    console.log('submit:', this.form.value);
+  }
+
+  private scrollToFirstInvalidElement(): void {
+    const invalidElement = this.formElement.nativeElement.querySelector('.ng-invalid');
+    if (invalidElement) {
+      if (invalidElement instanceof HTMLInputElement || invalidElement instanceof HTMLTextAreaElement) {
+        invalidElement.focus();
+      }
+    }
+  }
+
+  private sendEmail(): void {
+    const lineSeparator = '\r\n';
+    const header = Object.entries(this.form.value)
+      .filter(([key, value]) => !!value && key !== 'nachricht')
+      .map(
+        ([key, value]) =>
+          `${key.substring(0, 1).toUpperCase()}${key.substring(1)}: ${value}`
+      )
+      .join(lineSeparator);
     const message = encodeURIComponent(
-      Object.entries(this.form.value)
-      .filter(([, value]) => !!value)
-      .map(([key, value]) => `${key.substring(0, 1).toUpperCase()}${key.substring(1)}: ${value}`)
-      .join('\n')
+      `${header}${lineSeparator}` +
+        `-------------------------` +
+        `${lineSeparator}${this.form.value.nachricht}`
     );
     const link = document.createElement('a');
     link.href = `mailto:nico.andresen@gmx.de?subject=Kontaktanfrage&body=${message}`;

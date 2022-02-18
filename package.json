@@ -7,11 +7,13 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "prerender": "nx prerender"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.1.0",
+    "@angular/cdk": "^13.2.2",
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
     "@angular/core": "~13.1.0",
@@ -19,6 +21,8 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@fortawesome/angular-fontawesome": "^0.10.1",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@nrwl/angular": "13.4.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",

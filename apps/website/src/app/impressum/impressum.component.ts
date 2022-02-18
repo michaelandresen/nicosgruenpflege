@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'nicosgruenpflege-impressum',
   templateUrl: './impressum.component.html',
-  styleUrls: ['./impressum.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImpressumComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ImpressumComponent {
 }

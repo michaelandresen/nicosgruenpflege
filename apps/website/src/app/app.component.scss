@@ -1,46 +1,60 @@
-.pgBg {
-	width:900px;
-	margin:auto;
-	background-color:yellow;
-	padding:15px 15px;
+:host {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  padding: 14px;
+  background-color: yellow;
+  border: solid yellow 1px;
+}
+
+header,
+footer {
+  flex: 0 1 auto;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .logo {
-	text-align:center;
-	border: solid black 1px;
-	padding:5px;
-	margin-bottom:15px;
+  text-align: center;
+  border: solid black 1px;
+  padding: 5px;
+  margin-bottom: 15px;
+
   img {
-    width: 590px;
+    max-width: 590px;
+  }
+
+  @media screen and (max-width: 500px) {
+    img {
+      max-width: 290px;
+    }
   }
 }
 
-.contentBdr {
-	border: solid black 1px;
-	margin:15px 0px;
-	padding: 15px;
-	position:relative;
-	min-height:400px;
+main {
+  border: solid black 1px;
+  margin: 15px 0px;
+  padding: 15px;
+  min-height: 400px;
 }
 
 .address {
-	float:right;
-	padding:5px;
-	margin-left:15px;
-	margin-bottom:15px;
-	font-size:0.8em;
-	text-align:right;
+  float: right;
+  padding: 5px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  font-size: 0.8em;
+  text-align: right;
+
+  td {
+    text-align: left;
+  }
 }
 
-.picTel {
-	background-image:url('img/telEmail.png');
-	background-position:right;
-	width:17px;
-	height:15px;
-}
-
-.picEmail {
-	background-image:url('img/telEmail.png');
-	width:19px;
-	height:15px;
+@media screen and (max-width: 400px) {
+  .address {
+    display: none;
+  }
 }

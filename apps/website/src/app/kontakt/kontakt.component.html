@@ -1,65 +1,38 @@
-<h2>
-	Sie sind interessiert an einem individuellen Angebot?
-</h2>
-<div>
-	Dann informieren Sie sich kostenlos und unverbindlich. Füllen
-	Sie einfach dieses Kontaktformular aus. Ich werde mich umgehend
-	bei Ihnen melden.
-</div>
+<h2>Sie sind interessiert an einem individuellen Angebot?</h2>
+<p>
+  Dann informieren Sie sich kostenlos und unverbindlich. Füllen Sie einfach
+  dieses Kontaktformular aus. Ich werde mich umgehend bei Ihnen melden.
+</p>
 <br />
-<form autocomplete="on" [formGroup]="form" (ngSubmit)="submit()">
-	<table cellspacing="0" cellpadding="0">
-		<tr>
-			<th [ngClass]="{invalid: form.controls['anrede'].invalid}">Anrede*</th>
-			<th [ngClass]="{invalid: form.controls['vorname'].invalid}">Vorname*</th>
-			<th [ngClass]="{invalid: form.controls['nachname'].invalid}">Nachname*</th>
-		</tr>
-		<tr>
-			<td>
-				<select formControlName="anrede" style="width:155px;">
-          <option value="">*** Bitte auswählen ***</option>
-          <option>Herr</option>
-          <option>Frau</option>
-          <option>Firma</option>
-				</select>
-			</td>
-			<td><input type="text" name="given-name" formControlName="vorname" style="width:180px;"></td>
-			<td><input ntype="text" name="family-name" formControlName="nachname" style="width:180px;"></td>
-		</tr>
-	</table>
-	<table cellspacing="0" cellpadding="0">
-		<tr>
-			<th [ngClass]="{invalid: form.controls['plz'].invalid}">PLZ</th>
-			<th [ngClass]="{invalid: form.controls['ort'].invalid}">Ort</th>
-			<th [ngClass]="{invalid: form.controls['strasse'].invalid}">Straße</th>
-		</tr>
-		<tr>
-			<td><input type="text" name="postal-code" formControlName="plz" style="width:49px;"></td>
-			<td><input type="text" name="address-level2" formControlName="ort" style="width:230px;"></td>
-			<td><input type="text" name="street-address" formControlName="strasse" style="width:230px;"></td>
-		</tr>
-	</table>
-	<table cellspacing="0" cellpadding="0">
-		<tr>
-			<th colspan="2" [ngClass]="{invalid: form.controls['email'].invalid}">Email</th>
-			<th [ngClass]="{invalid: form.controls['telefon'].invalid}">Telefon</th>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="text" name="email" formControlName="email" style="width:370px;"></td>
-			<td><input type="text" name="tel" formControlName="telefon" style="width:150px;"></td>
-		</tr>
-	</table>
-	<table cellspacing="0" cellpadding="0">
-		<tr>
-			<th colspan="3" [ngClass]="{invalid: form.controls['nachricht'].invalid}">Nachricht*</th>
-		</tr>
-		<tr>
-			<td colspan="3"><textarea formControlName="nachricht" rows="10" style="width:531px"></textarea></td>
-		</tr>
-		<tr>
-			<td colspan="3" style="padding-top:15px;text-align:center;">
-        <button [disabled]="form.pristine" style="width:200px;">E-Mail senden</button>
-      </td>
-		</tr>
-	</table>
+<form autocomplete="on" [formGroup]="form" (ngSubmit)="submit()" #frm>
+  <nicosgruenpflege-labeled-input formControlName="name">
+    Vor- und Nachname
+  </nicosgruenpflege-labeled-input>
+  <nicosgruenpflege-labeled-input formControlName="strasse">
+    Straße und Hausnummer
+  </nicosgruenpflege-labeled-input>
+  <div class="postal-code-city">
+    <nicosgruenpflege-labeled-input size="5" class="postal-code" formControlName="plz" name="postal-code">
+      PLZ
+    </nicosgruenpflege-labeled-input>
+    <nicosgruenpflege-labeled-input class="city" formControlName="ort">
+      Ort
+    </nicosgruenpflege-labeled-input>
+  </div>
+  <nicosgruenpflege-labeled-input formControlName="email">
+    E-Mail
+  </nicosgruenpflege-labeled-input>
+  <nicosgruenpflege-labeled-input formControlName="telefon">
+    Telefon
+  </nicosgruenpflege-labeled-input>
+  <nicosgruenpflege-labeled-input formControlName="nachricht" type="textarea" rows="10">
+    Nachricht
+  </nicosgruenpflege-labeled-input>
+  <!--label [class.invalid]="form.controls['nachricht'].invalid">
+    Nachricht<span class="mandatory">*</span><br />
+    <textarea formControlName="nachricht" rows="10"></textarea>
+  </label -->
+  <div class="submit">
+    <button>E-Mail senden</button>
+  </div>
 </form>

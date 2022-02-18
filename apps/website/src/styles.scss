@@ -1,25 +1,56 @@
-html, body {
-	margin:0px;
-	padding:0px;
-	font-family: 'Times New Roman', Times, serif;
-	font-size:14pt;
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+html {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14pt;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input, button, textarea {
+  font-size: 1em;
+}
+
+body {
+  background-color: rgb(82, 74, 74);
+
+  > div.content {
+    min-height: 100%;
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    box-sizing: content-box;
+  }
+}
+
+p {
+  text-align: justify;
 }
 
 a {
-	color:black;
+  color: black;
 }
 
 ul {
-	margin-top:0px;
-	margin-bottom:0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 h2 {
-	font-size:1.2em;
-	font-weight:bold;
+  font-size: 1.2em;
+  font-weight: bold;
   margin: 0 0 5px 0;
 }
 
 div {
-  hyphens: manual;
+  hyphens: auto;
 }

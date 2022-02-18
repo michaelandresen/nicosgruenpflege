@@ -1,22 +1,27 @@
-table {
-  th {
-    padding: 10px 5px 0px 0px;
-    vertical-align: top;
-    font-weight: normal;
-    text-align: left;
-  }
-
-  td {
-    padding-right: 5px;
-  }
+nicosgruenpflege-labeled-input {
+  padding-bottom: 0.5em;
 }
 
-form.ng-submitted {
-  .ng-invalid:not(form) {
-    border: solid red 1px;
-  }
-  .invalid {
-    color:red;
-    font-weight: bold;
-  }
+nicosgruenpflege-labeled-input:not(.postal-code) {
+  width: 100%;
+  max-width: 500px;
+}
+
+.submit {
+  max-width: 500px;
+  text-align: center;
+}
+
+.postal-code-city {
+  max-width: 500px;
+  display: flex;
+  gap: 10px;
+}
+
+.postal-code {
+  flex: 0 0 auto;
+}
+
+.city {
+  flex: 1;
 }
