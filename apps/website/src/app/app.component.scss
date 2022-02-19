@@ -26,6 +26,12 @@ main {
     max-width: 590px;
   }
 
+  @media screen and (min-width:501px) and (max-width:630px) {
+    img {
+      max-width: 390px;
+    }
+  }
+
   @media screen and (max-width: 500px) {
     img {
       max-width: 290px;
