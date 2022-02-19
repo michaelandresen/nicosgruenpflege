@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { KONTAKT } from '../router-paths';
+import { KONTAKT } from '../constants';
 
 @Component({
   selector: 'nicosgruenpflege-gartenpflege',

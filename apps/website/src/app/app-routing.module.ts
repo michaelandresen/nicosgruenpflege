@@ -6,7 +6,7 @@ import {
   KONTAKT,
   LANDSCHAFTSPFLEGE,
   STARTSEITE,
-} from './router-paths';
+} from './constants';
 
 @NgModule({
   imports: [

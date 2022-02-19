@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
+  ElementRef,
   Input,
   ViewChild,
 } from '@angular/core';
@@ -43,6 +44,9 @@ export class LabeledInputComponent
     this.deferredControlValueAccessorCalls.forEach((call) => call(this._formControlDirective.valueAccessor!));
     this.deferredControlValueAccessorCalls = [];
   }
+
+  @ViewChild('lbl')
+  public labeElement!: ElementRef<HTMLLabelElement>
 
   @Input()
   public label!: string;
@@ -126,5 +130,9 @@ export class LabeledInputComponent
     } else {
       this.deferredControlValueAccessorCalls.push((target) => target.registerOnTouched(fn));
     }
+  }
+
+  public focus(): void {
+    this.labeElement.nativeElement.focus();
   }
 }

@@ -1,4 +1,4 @@
-<label *ngIf="viewModel$ | async as viewModel">
+<label *ngIf="viewModel$ | async as viewModel" #lbl>
   <ng-content></ng-content>
   <span *ngIf="viewModel.required" class="mandatory">*</span>
   <br />

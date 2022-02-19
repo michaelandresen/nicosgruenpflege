@@ -1,6 +1,8 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, ContentChildren, ElementRef, Inject, Input, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { AbstractControl, DefaultValueAccessor, FormControl, FormControlDirective, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Inject, QueryList, ViewChildren } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { contact } from '../constants';
+import { toPhoneLink } from '../utils';
 import { LabeledInputComponent } from './labeled-input/labeled-input.component';
 
 @Component({
@@ -9,7 +11,11 @@ import { LabeledInputComponent } from './labeled-input/labeled-input.component';
   styleUrls: ['./kontakt.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class KontaktComponent implements AfterViewInit {
+export class KontaktComponent {
+
+  public readonly contact = contact;
+  public readonly phoneLink = toPhoneLink(contact.phone);
+
   public readonly form = new FormGroup({
     name: new FormControl(undefined, Validators.required),
     strasse: new FormControl(),
@@ -22,17 +28,13 @@ export class KontaktComponent implements AfterViewInit {
 
   private readonly document: Document;
 
-  @ViewChild('frm')
-  private formElement!: ElementRef<HTMLFormElement>;
+  @ViewChildren(LabeledInputComponent)
+  private formElements!: QueryList<LabeledInputComponent>;
 
   public constructor(
     @Inject(DOCUMENT) document: unknown,
     ) {
     this.document = document as Document;
-  }
-
-  public ngAfterViewInit(): void {
-    console.log('formElement:', this.formElement);
   }
 
   public submit(): void {
@@ -44,11 +46,10 @@ export class KontaktComponent implements AfterViewInit {
   }
 
   private scrollToFirstInvalidElement(): void {
-    const invalidElement = this.formElement.nativeElement.querySelector('.ng-invalid');
+    const invalidElement = this.formElements.find((element) => element.control.invalid);
     if (invalidElement) {
-      if (invalidElement instanceof HTMLInputElement || invalidElement instanceof HTMLTextAreaElement) {
-        invalidElement.focus();
-      }
+      console.log('invalidElement:', invalidElement.formControlName);
+      invalidElement.focus();
     }
   }
 

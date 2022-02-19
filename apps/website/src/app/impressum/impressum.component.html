@@ -1,10 +1,14 @@
 <h2>Impressum</h2>
 <p>
   <strong>Inhaltlich verantwortlich:</strong><br />
-  Nico Andresen<br />
-  Jürgenskoppel 29b<br />
-  24253 Probsteierhagen<br />
-  Mail: <a href="mailto:nicoandresen@gmx.de">nicoandresen@gmx.de</a><br />
+  {{ contact.name }}<br />
+  {{ contact.street }}<br />
+  {{ contact.postalCode }} {{ contact.city }}<br />
+  <br />
+  E-Mail: <a [href]="'mailto:' + contact.email">{{ contact.email }}</a
+  ><br />
+  Telefon: <a [href]="phoneLink">{{ contact.phone }}</a
+  ><br />
   Web: <a href="https://www.nicosgruenpflege.de">www.nicosgruenpflege.de</a>
 </p>
 <p><strong>Geschäftsführung:</strong> Nico Andresen<br /></p>

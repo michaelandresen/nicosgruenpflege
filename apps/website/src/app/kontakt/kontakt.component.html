@@ -1,7 +1,9 @@
 <h2>Sie sind interessiert an einem individuellen Angebot?</h2>
 <p>
   Dann informieren Sie sich kostenlos und unverbindlich. Füllen Sie einfach
-  dieses Kontaktformular aus. Ich werde mich umgehend bei Ihnen melden.
+  dieses Kontaktformular aus oder rufen Sie mich einfach direkt unter
+  <a [href]="phoneLink">{{contact.phone}}</a>
+  . Ich werde mich umgehend bei Ihnen melden.
 </p>
 <br />
 <form autocomplete="on" [formGroup]="form" (ngSubmit)="submit()" #frm>

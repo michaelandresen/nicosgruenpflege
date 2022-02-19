@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BottomMenu, TopMenu } from './menu-items';
+import { contact, topMenu, bottomMenu } from './constants';
+import { toPhoneLink } from './utils';
 
 @Component({
   selector: 'nicosgruenpflege-root',
@@ -8,6 +9,8 @@ import { BottomMenu, TopMenu } from './menu-items';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  public readonly topMenuItems = TopMenu;
-  public readonly bottomMenuItems = BottomMenu;
+  public readonly contact = contact;
+  public readonly phoneLink = toPhoneLink(contact.phone);
+  public readonly topMenuItems = topMenu;
+  public readonly bottomMenuItems = bottomMenu;
 }

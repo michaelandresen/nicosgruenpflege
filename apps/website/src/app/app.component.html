@@ -6,10 +6,11 @@
 </header>
 <main>
   <div class="address">
-    Nico Andresen<br />
-    Jürgenskoppel 29b<br />
-    24253 Probsteierhagen<br />
-    <a href="mailto:nicoandresen@gmx.de">nicoandresen@gmx.de</a>
+    {{contact.name}}<br />
+    {{contact.street}}<br />
+    {{contact.postalCode}} {{contact.city}}<br />
+    <a [href]="'mailto:' + contact.email">{{contact.email}}</a><br />
+    <a [href]="phoneLink">{{contact.phone}}</a><br />
   </div>
   <router-outlet></router-outlet>
 </main>
