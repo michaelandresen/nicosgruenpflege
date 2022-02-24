@@ -39,7 +39,6 @@ export class LabeledInputComponent
 {
   @ViewChild(FormControlDirective)
   public set formControlDirective(value: FormControlDirective) {
-    console.log('setFormControlDirective:', value);
     this._formControlDirective = value;
     this.deferredControlValueAccessorCalls.forEach((call) => call(this._formControlDirective.valueAccessor!));
     this.deferredControlValueAccessorCalls = [];
